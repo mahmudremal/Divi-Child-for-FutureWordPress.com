@@ -26,6 +26,7 @@ class DIVI_CHILD_THEME {
 		Register_Post_Types::get_instance();
 		Register_Taxonomies::get_instance();
 		Archive_Settings::get_instance();
+		Horizental_ConnectAddon::get_instance();
 
 		$this->setup_hooks();
 	}

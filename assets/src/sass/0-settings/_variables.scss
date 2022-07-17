@@ -8,7 +8,12 @@ $mq-breakpoints: (
 	small: 600px,
 	medium: 768px,
 	large: 1024px,
-	xlarge: 1240px
+	xlarge: 1240px,
+
+	mobile: 320px,
+  tablet: 740px,
+  desktop: 980px,
+  wide: 1300px
 ) !default;
 
 $site_width: 1140px;
@@ -18,3 +23,8 @@ $padding-right: 15px;
 
 $margin-top: 60px;
 $margin-bottom: 60px;
+
+
+$site_url: 'http://futurewo.com/';
+$theme_url: 'http://futurewo.com/wp-content/themes/Divi-child';
+$build_dir: 'http://futurewo.com/wp-content/themes/Divi-child/assets/build';

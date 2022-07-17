@@ -16,7 +16,14 @@
 
 // Components
 
+.aboutUsSpacerBG {
+  background: transparent;
+  // background-image: url('~//img/about/about_banner_icon.svg') no-repeat center center fixed;
+}
 
-@import "8-css/header";
-@import "8-css/addons";
-@import "8-css/footer";
+.about-hero-container {
+  @include mq( medium ) {
+    max-width: 80vw;
+    margin: auto;
+  }
+}

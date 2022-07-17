@@ -23,6 +23,7 @@ const entry = {
 	editor: JS_DIR + '/editor.js',
 	blocks: JS_DIR + '/blocks.js',
 	author: JS_DIR + '/author.js',
+	about: JS_DIR + '/about.js',
 };
 
 const output = {
@@ -68,6 +69,8 @@ const rules = [
 			MiniCssExtractPlugin.loader,
 			'css-loader',
 			'sass-loader',
+			// 'style-loader',
+			// 'resolve-url-loader',
 		]
 	},
 	{

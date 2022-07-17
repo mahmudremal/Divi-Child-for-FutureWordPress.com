@@ -1,0 +1,142 @@
+@media only screen and (min-device-width: 981px) and (max-device-width: 1920px) {
+	.horizental_social {
+		position: fixed;
+		right: 0;
+		top: 0;
+		z-index: 9;
+		height: 100%;
+		padding: 41vh 44px 44px 44px;
+		.et-social-icons {
+			float: right;
+			li {
+				display: list-item;
+				margin-left: 20px;
+				text-align: center;
+				margin-bottom: 20px;
+			}
+			a {
+				display: inline-block;
+				font-size: 18px;
+				position: relative;
+				text-align: center;
+				-webkit-transition: color 300ms ease 0s;
+				transition: color 300ms ease 0s;
+				color: #666;
+				text-decoration: none;
+				cursor: pointer;
+				svg {
+					height: 30px;
+					width: 30px;
+				}
+				span {
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					transform: translateX(-130%);
+					background: #333;
+					padding: 5px 10px 5px 10px;
+					color: #fff;
+					border-radius: 5px;
+					font-size: 12px;
+					text-transform: uppercase;
+					box-shadow: 1px 1px 6px #5e5d5db3;
+					opacity: 0;
+					visibility: hidden;
+				}
+				span::before {
+					content: "";
+					position: absolute;
+					height: 10px;
+					width: 10px;
+					background: #333;
+					right: 13px;
+					top: 0;
+					transform: rotate(45deg) translate(20px, -8px);
+					border: none;
+				}
+			}
+			a:hover {
+				span {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+			a:after {
+				position: absolute;
+				width: 1.5em;
+				height: 1.5em;
+				border: 2px solid #fff;
+				border-radius: 100px;
+				content: "";
+				top: -.35em;
+				left: -.4em;
+				transform: rotate(-90deg);
+				transition: transform .2s ease-out,opacity 0;
+				opacity: 0;
+				overflow: hidden;
+				-webkit-transition: all .2s ease-in-out;
+				-moz-transition: all .2s ease-in-out;
+				transition: all .2s ease-in-out;
+			}
+			a:hover:after {
+				-ms-transform: rotate(-90deg) scale(1.1) translate(5px, -5px);
+				transform: rotate(-90deg) scale(1.1) translate(5px, -5px);
+				opacity: 1;
+				width: 2.5em;
+				height: 2.5em;
+				top: 0;
+				left: 0;
+			}
+		}
+	}
+	.horizental_contact {
+		label {
+			-webkit-transition: all .2s ease-in-out;
+			-moz-transition: all .2s ease-in-out;
+			transition: all .2s ease-in-out;
+			font-family: 'barlow thin',Helvetica,Arial,Lucida,sans-serif;
+			-webkit-transform: rotate(90deg);
+			transform: rotate(90deg);
+			position: absolute;
+			left: -114px;
+			color: #fff;
+			top: 50vh;
+			font-size: 21px;
+			font-weight: 700;
+			padding: 10px 20px 13px 20px;
+			background-color: #fff0;
+			border-radius: 57px;
+			z-index: 9;
+			border: 4px solid #eee0;
+			position: fixed;
+			a {
+				color: #fff;
+			}
+		}
+	}
+	// "sticky-header" should added by Javascript on scroll event
+	.sticky-header {
+		.horizental_social {
+			.et-social-icons {
+				a {
+					color: $color__link;
+				}
+			}
+		}
+		.horizental_contact {
+			label {
+				background-color: #ffffffb0;
+				border: 4px solid #eee;
+			}
+			label, a {
+				color: #000;
+			}
+		}
+	}
+}
+@media only screen and (max-width: 980px) {
+	.horizental_contact, .horizental_social {
+    display: none;
+	}
+}

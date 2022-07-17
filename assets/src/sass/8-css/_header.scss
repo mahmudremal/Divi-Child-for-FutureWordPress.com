@@ -1,0 +1,223 @@
+#page-container {
+  top: 0;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  margin-top: -55px;
+}
+.header-main-toggle-sticky {
+  .et_pb_module {
+    background-color: transparent;
+    background: none;
+    .et_pb_menu_inner_container {
+      position: relative;
+      display: inline-flex;
+      flex-wrap: nowrap;
+      width: 100%;
+      width: -webkit-fill-available;
+      > div {
+        margin-top: 20px;
+      }
+      .et_pb_menu__wrap {
+        @include mq( tablet ){
+          // margin-left: 50px;
+          max-width: max-content;
+        }
+        .et_pb_menu__menu .et-menu.nav {
+          margin: auto;
+          padding: unset;
+          margin-top: 20px;
+          li {
+            padding: unset;
+            padding-right: 15px;
+            a {
+              padding: unset;
+              padding-bottom: 15px;
+              font-size: 20px;
+              font-weight: 200;
+              color: #fff;
+              -webkit-transition: all 0.4s ease-in-out;
+              transition: all 0.4s ease-in-out;
+              &:before {
+                position: absolute;
+                bottom: 20%;
+                left: 50%;
+                color: transparent;
+                content: '.';
+                text-shadow: 0 0 transparent;
+                font-size: 2.2em;
+                -webkit-transition: text-shadow 0.3s,color .3s;
+                -moz-transition: text-shadow 0.3s,color .3s;
+                transition: text-shadow 0.3s,color .3s;
+                -webkit-transform: translateX(-50%);
+                -moz-transform: translateX(-50%);
+                transform: translateX(-50%);
+                pointer-events: none;
+                color: #f9457a;
+                text-shadow: 7px 0 #f9457a, -7px 0 #f9457a;
+                opacity: 0;
+                visibility: hidden;
+              }
+            }
+          }
+          li.current-menu-ancestor > a, li.current-menu-item > a, li.current_page_item > a, li:hover a {
+            color: #ff8800;
+            &:before {
+              opacity: 1;
+              visibility: visible;
+              text-shadow: 10px 0 #f9457a,-10px 0 #f9457a;
+            }
+          }
+        }
+      }
+      .et_pb_menu__logo-wrap {
+        padding: unset;
+        width: 360px !important;
+        max-width: 380px;
+        position: relative;
+        align-items: start;
+        .et_pb_menu__logo {
+          width: 179px;
+          height: 65px;
+          overflow: hidden;
+          display: inline-block;
+          position: relative;
+          @include mq( $until: small ){
+            transform: scale(0.7);
+          }
+          img {
+            width: 358px;
+            max-width: 358px;
+            height: 63px;
+            margin: auto;
+            margin-left: 0;
+            -webkit-transition: all .3s ease;
+            -moz-transition: all .3s ease;
+            -ms-transition: all .3s ease;
+            -o-transition: all .3s ease;
+            transition: all .3s ease;
+          }
+        }
+        &:hover .et_pb_menu__logo img {
+          margin-left: -179px;
+        }
+        &:after {
+          content: url($build_dir + "/src/img/logo/tagline_light.png");
+          transform: scale(0.92);
+          position: absolute;
+          left: 170px;
+          top: 0;
+          @include mq( $until: small ){
+            transform: scale(0.6);
+            left: 115px;
+            top: -4px;
+          }
+          @include mq( $until: 300px ){
+            content: none;
+          }
+        }
+      }
+    }
+  }
+}
+header.et-l.et-l--header {
+  line-height: 23px;
+  font-weight: 500;
+  top: 0;
+  left: 0;
+  padding: 20px 10px 10px 10px;
+  background-color: #fff;
+  width: 100%;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+  position: relative;
+  z-index: 99999;
+  -webkit-transition: background-color 0.4s, color 0.4s, opacity 0.4s ease-in-out, -webkit-transform 0.4s;
+  transition: background-color 0.4s, color 0.4s, opacity 0.4s ease-in-out, -webkit-transform 0.4s;
+  transition: background-color 0.4s, color 0.4s, transform 0.4s, opacity 0.4s ease-in-out;
+  transition: background-color 0.4s, color 0.4s, transform 0.4s, opacity 0.4s ease-in-out, -webkit-transform 0.4s;
+  background-color: rgba(0, 0, 0, 0);
+  background: #e7e7e7;
+  background: none;
+  box-shadow: none;
+  font-family: 'Roboto Condensed', Helvetica, Arial, Lucida, sans-serif;
+  position: fixed;
+  position: absolute;
+  height: 80px;
+  max-height: 80px;
+  .et_pb_section {
+    padding: unset;
+    background: none;
+    border-radius: unset;
+    max-width: 100%;
+    .et_pb_row {
+      padding: unset;
+      max-width: unset;
+      width: 100%;
+      .et_pb_column {
+        .et_pb_menu {
+          background: none;
+        }
+        &.et-last-child {
+          .et_pb_module {
+            margin: auto;
+            margin-top: 20px;
+          }
+        }
+        &.et_pb_column_3_4 {
+          width: 100%;
+          @include mq( desktop ){
+            width: 80%;
+          }
+        }
+        &.et_pb_column_1_4 {
+          display: none;
+          @include mq( desktop ){
+            display: block;
+            width: 20%;
+          }
+          #header-menu-get-estimate {
+            box-sizing: border-box;
+            color: #393b45;
+            font-size: 16px;
+            letter-spacing: 1px;
+            text-align: center;
+            font-weight: 400;
+            float: right;
+            right: 10px;
+            border-image: initial;
+            border-radius: 3px;
+            background-color: #fff;
+            border: 2px solid #fff;
+            padding: 6px 10px;
+            padding-top: 10px;
+            /* padding: .75rem 2.77rem .75rem 2.77rem; */
+            -webkit-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.25);
+            -moz-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.25);
+            box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.25);
+            -webkit-transition: background-color 0.4s, color 0.4s ease-in-out;
+            transition: background-color 0.4s, color 0.4s ease-in-out;
+            &:before {
+              content: "";
+              content: url($build_dir + "/src/img/icon/estimate_bt_circle_light.png");
+              position: absolute;
+              left: 12px;
+            }
+            &:hover {
+              background: none;
+              background-color: #ec6a2d00;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+div#wpadminbar {
+  display: none;
+}

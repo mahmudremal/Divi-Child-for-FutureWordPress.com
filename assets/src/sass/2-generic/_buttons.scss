@@ -1,1 +1,23 @@
 // Button styles
+.btn, button, .button,
+.et_pb_button, .et_button {
+  color: #ffffff;
+  border-width: 0px;
+  border-radius: 100px;
+  letter-spacing: 1px;
+  font-size: 18px;
+  font-family: 'ProximaNova-Regular', sans-serif;
+  text-transform: uppercase;
+  transition: all 300ms ease 0ms;
+  background-color: #ffffff;
+  // background-image: linear-gradient(192deg, rgb(128 134 147 / 91%) 0%, rgba(92, 96, 110, 0.94) 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, transparent), color-stop(50%,#fff), color-stop(100%,transparent)); /* Chrome, Safari4+ */
+  background: -webkit-linear-gradient(left, transparent 0%,#fff 50%,transparent 100%); /* Chrome10+, Safari5.1+ */
+  background: -moz-linear-gradient(left, transparent 0%,#fff 50%,transparent 100%);    /* FF3.6+ */
+  background: linear-gradient(to left, transparent 0%,#fff 50%,transparent 100%);      /* W3C */
+  padding: unset;
+  padding-top: 15px;
+  padding-right: 61px;
+  padding-bottom: 15px;
+  padding-left: 61px;
+}
