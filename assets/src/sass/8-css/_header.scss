@@ -1,3 +1,11 @@
+
+div#wpadminbar {
+  display: n one;
+}
+
+/*======================================
+          Header design
+======================================*/
 #page-container {
   top: 0;
   position: relative;
@@ -23,49 +31,62 @@
           // margin-left: 50px;
           max-width: max-content;
         }
-        .et_pb_menu__menu .et-menu.nav {
-          margin: auto;
-          padding: unset;
-          margin-top: 20px;
-          li {
+        .et_pb_menu__menu {
+          .et-menu.nav {
+            margin: auto;
             padding: unset;
-            padding-right: 15px;
-            a {
+            margin-top: 20px;
+            li {
               padding: unset;
-              padding-bottom: 15px;
-              font-size: 20px;
-              font-weight: 200;
-              color: #fff;
-              -webkit-transition: all 0.4s ease-in-out;
-              transition: all 0.4s ease-in-out;
+              padding-right: 15px;
+              a {
+                padding: unset;
+                padding-bottom: 15px;
+                font-size: 20px;
+                font-weight: 200;
+                color: #fff;
+                -webkit-transition: all 0.4s ease-in-out;
+                transition: all 0.4s ease-in-out;
+                &:before {
+                  position: absolute;
+                  bottom: 20%;
+                  left: 50%;
+                  color: transparent;
+                  content: '.';
+                  text-shadow: 0 0 transparent;
+                  font-size: 2.2em;
+                  -webkit-transition: text-shadow 0.3s,color .3s;
+                  -moz-transition: text-shadow 0.3s,color .3s;
+                  transition: text-shadow 0.3s,color .3s;
+                  -webkit-transform: translateX(-50%);
+                  -moz-transform: translateX(-50%);
+                  transform: translateX(-50%);
+                  pointer-events: none;
+                  color: #f9457a;
+                  text-shadow: 7px 0 #f9457a, -7px 0 #f9457a;
+                  opacity: 0;
+                  visibility: hidden;
+                }
+                &::after {
+                  content: none;
+                }
+              }
+              ul li a:before {
+                content: none;
+              }
+            }
+            li.current-menu-ancestor > a, li.current-menu-item > a, li.current_page_item > a, li:hover a {
+              color: #ff8800;
               &:before {
-                position: absolute;
-                bottom: 20%;
-                left: 50%;
-                color: transparent;
-                content: '.';
-                text-shadow: 0 0 transparent;
-                font-size: 2.2em;
-                -webkit-transition: text-shadow 0.3s,color .3s;
-                -moz-transition: text-shadow 0.3s,color .3s;
-                transition: text-shadow 0.3s,color .3s;
-                -webkit-transform: translateX(-50%);
-                -moz-transform: translateX(-50%);
-                transform: translateX(-50%);
-                pointer-events: none;
-                color: #f9457a;
-                text-shadow: 7px 0 #f9457a, -7px 0 #f9457a;
-                opacity: 0;
-                visibility: hidden;
+                opacity: 1;
+                visibility: visible;
+                text-shadow: 10px 0 #f9457a,-10px 0 #f9457a;
               }
             }
           }
-          li.current-menu-ancestor > a, li.current-menu-item > a, li.current_page_item > a, li:hover a {
-            color: #ff8800;
-            &:before {
-              opacity: 1;
-              visibility: visible;
-              text-shadow: 10px 0 #f9457a,-10px 0 #f9457a;
+          .et_mobile_nav_menu {
+            .et_mobile_menu {
+              margin: auto;
             }
           }
         }
@@ -153,8 +174,13 @@ header.et-l.et-l--header {
       padding: unset;
       max-width: unset;
       width: 100%;
+      margin-top: 20px;
       .et_pb_column {
         .et_pb_menu {
+          background: none;
+        }
+        .et_pb_module {
+          background-color: none;
           background: none;
         }
         &.et-last-child {
@@ -182,15 +208,16 @@ header.et-l.et-l--header {
             letter-spacing: 1px;
             text-align: center;
             font-weight: 400;
+            text-transform: unset;
             float: right;
             right: 10px;
             border-image: initial;
             border-radius: 3px;
             background-color: #fff;
+            background-image: none;
             border: 2px solid #fff;
-            padding: 6px 10px;
-            padding-top: 10px;
-            /* padding: .75rem 2.77rem .75rem 2.77rem; */
+            padding: 6px 30px 6px 40px;
+            margin-top: 4px;
             -webkit-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.25);
             -moz-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.25);
             box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.25);
@@ -207,17 +234,292 @@ header.et-l.et-l--header {
               background-color: #ec6a2d00;
               color: #fff;
             }
+            &:after {
+              line-height: 0.50em;
+            }
+          }
+          .et_pb_button_module_wrapper {
+            &:before {
+              content: "";
+              content: url($build_dir + "/src/img/icon/estimate_bt_circle_light.png");
+              position: absolute;
+              height: 20px;
+              width: 20px;
+              top: 13px;
+              left: 5px;
+              // left: 65px;
+              z-index: 1;
+            }
           }
         }
       }
     }
   }
+  &.sticky {
+    position: fixed;
+    padding-top: 0;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    .et_builder_inner_content {
+      max-height: 80px;
+      z-index: 2;
+      .header-main-toggle-sticky .et_pb_module .et_pb_menu_inner_container
+      > div {
+        margin-top: 10px;
+      }
+      .et_pb_menu__logo-wrap {
+        transform: scale(0.8) translateY(-10px);
+      }
+      .et_pb_menu__wrap .et_pb_menu__menu .et-menu.nav li a {
+        padding: unset;
+        padding-bottom: 15px;
+        font-size: 20px;
+        font-weight: 200;
+        color: #333;
+        -webkit-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+      }
+      .et_pb_section .et_pb_row {
+        margin-top: unset;
+        .et_pb_column.et-last-child .et_pb_module {
+          margin-top: 10px;
+          #header-menu-get-estimate {
+            color: #333;
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+  .max-megamenu {
+    border-width: 1px;
+    border-color: #d1d1d1;
+  }
 }
+/*======================================
+        End of Header design
+======================================*/
 
-
-
-
-
-div#wpadminbar {
-  display: none;
+/*======================================
+          About Us page design
+======================================*/
+.main-hero-area.about-hero {
+  .elementor-column {
+    margin: auto;
+    @include mq( $from: desktop ){
+      max-width: 85%;
+    }
+    @include mq( $until: desktop ){
+      max-width: 90%;
+    }
+    @include mq( $until: mobile ){
+      max-width: 100%;
+    }
+  }
+  .hero-header-1 h1 {
+    font-size: 3em;
+    color: #ffffff;
+    line-height: 1.2em;
+    text-align: center;
+  }
+  .elementor-top-section .elementor-button {
+    padding: 15px 60px;
+    background-color: currentColor;
+  }
+  p {
+    text-align: center;
+    line-height: 1.4em;
+    word-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
+.about-service-section {
+  .elementor-element {
+    margin-bottom: auto;
+    .elementor-widget-heading h2.elementor-heading-title {
+      font-size: 2em;
+      line-height: 1.2em;
+      text-align: center;
+      color: #4b1100;
+    }
+    .elementor-widget-heading h3.elementor-heading-title {
+      font-size: 2em;
+      color: #f65f52;
+      text-align: center;
+    }
+    .elementor-heading-title {
+      padding-bottom: 10px;
+    }
+    .elementor-widget-text-editor {
+      text-align: center;
+      word-wrap: break-word;
+      color: rgba(20, 20, 20, 0.88);
+      color: currentColor;
+      line-height: 1.5em;
+      margin: auto;
+      &.service-editor-half {
+        @include mq( $from: desktop ){
+          max-width: 70%;
+        }
+        @include mq( $until: tablet ){
+          max-width: 80%;
+        }
+        @include mq( $until: mobile ){
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+.area-of-expertise {
+  .btm-devider {
+    h2.elementor-heading-title {
+      width: max-content;
+      margin: auto;
+      position: relative;
+      &:before {
+        content: "";
+        width: 50%;
+        height: 1px;
+        margin: auto;
+        border-top-color: #eee;
+        border-top-color: rgba(0, 0, 0, 0.1);
+        border-top-width: 1px;
+        border-top-style: solid;
+        position: absolute;
+        left: 50%;
+        bottom: -20px;
+        transform: translateX(-50%);
+        /* z-index: 10; */
+        border-top-color: #666b77;
+        border-top-width: 3px;
+      }
+    }
+  }
+  .how-quality-service {
+    .elementor-icon-box-wrapper .elementor-icon-box-title span {
+      font-size: 20px;
+      text-align: center;
+      color: #4b1100;
+    }
+  }
+
+}
+.confidence-in-approach {
+  .elementor-container .elementor-column .elementor-widget-wrap {
+    margin: auto;
+    @include mq( $from: desktop ){
+      max-width: 80%;
+    }
+    @include mq( $until: tablet ){
+      max-width: 95%;
+    }
+    @include mq( $until: mobile ){
+      max-width: 100%;
+    }
+    .elementor-element {
+      margin-bottom: 20px;
+    }
+    .elementor-widget-heading {
+      .elementor-heading-title {
+        font-family: 'ProductSans-Regular', sans-serif;
+        letter-spacing: 2px;
+      }
+      h4 {
+        font-size: 19px;
+      }
+      h3 {
+        font-family: 'ProductSans-Light', sans-serif;
+        font-weight: 300;
+        text-transform: uppercase;
+        font-size: 29px;
+        line-height: 1em;
+      }
+    }
+  }
+}
+/*======================================
+      End of About Us page design
+======================================*/
+/*======================================
+      Home page design
+======================================*/
+.homepagehero-section {
+  .elementor-container {
+    @include mq( $from: desktop ){
+      max-width: 70%;
+    }
+    @include mq( $until: desktop ){
+      max-width: 85%;
+    }
+    @include mq( $until: mobile ){
+      max-width: 100%;
+    }
+    h1.elementor-heading-title {
+      font-size: 2.6em;
+      line-height: 1.3em;
+    }
+    h4.elementor-heading-title {
+      font-size: 1.3em;
+      letter-spacing: 1px;
+      line-height: 1.3em;
+    }
+    .exclusive-services.elementor-element .elementor-button,
+    .see-our-work.elementor-element .elementor-button {
+      color: #4b1100;
+      border-width: 0px;
+      border-color: rgba(255,255,255,0.26);
+      border-radius: 100px;
+      font-size: 16px;
+      text-transform: uppercase;
+      background-image: none;
+      background: none;
+      background-color: #ffffff;
+      padding: 10px 45px;
+      &:after {
+        content: "$";
+        line-height: inherit;
+        font-size: inherit;
+        margin-left: -1em;
+        left: auto;
+        font-family: ETmodules;
+        font-weight: 400;
+      }
+      &:hover {
+        color: #ffffff;
+        background-image: initial;
+        background-color: #f65f52;
+        &:after {
+          margin-left: .3em;
+          left: auto;
+          margin-left: .3em;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+.homepage-section-2.top-nontch-development-company {
+  .btm-border {
+    position: relative;
+    width: max-content;
+    &:before {
+      content: "";
+      width: 100%;
+      height: 1px;
+      border-top: 1px solid rgba(0,0,0,.1);
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 10;
+      border-top-color: #000000;
+      border-top-width: 5px;
+    }
+  }
+}
+/*======================================
+      End of Home page design
+======================================*/

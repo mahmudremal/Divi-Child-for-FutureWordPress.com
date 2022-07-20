@@ -2,6 +2,8 @@
 	class ScriptMainJS {
 		constructor() {
 			this.ondev();
+			this.stickyNav();
+			this.scrollY();
 		}
 		ondev() {
 			$( document ).keyup( function( e ){
@@ -14,6 +16,29 @@
 						break;
 				}
 			} );
+		}
+		stickyNav() {
+			$( document ).ready( function( e ){
+				// let w_out_sticky = document.querySelector( ".header-main-toggle-sticky" );
+				let w_out_sticky = document.querySelector( ".header-main-toggle-sticky" ).parentNode.parentNode; // $( ".header-main-toggle-sticky" ).parents( 'header' );
+				window.addEventListener( 'scroll', () => {
+						window.scrollY > 30 ? w_out_sticky.classList.add( "sticky" ) : w_out_sticky.classList.remove( "sticky" );
+				} );
+			} );
+		}
+		scrollY() {
+			const thatClass = this;
+			$( document ).ready( function(){
+				$( 'a[href="#top"]' ).on( 'click', function( e ) {
+					e.preventDefault();
+					that = thatClass.scrollTop( e, e );
+				} );
+			} );
+		}
+		scrollTop( sec = "#section2", nav = "#nav" ) {
+			$( 'html, body' ).animate( {
+				scrollTop: 0 // $( sec ).offset().top - $( nav ).height(); // minus the nav height
+			}, 1000 );			
 		}
 	}
 

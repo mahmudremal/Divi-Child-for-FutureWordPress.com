@@ -1,3 +1,56 @@
+
+/*---------------------------
+			Including fonts css
+---------------------------*/
+@font-face {
+	font-family: 'Avenir LT Std';
+	font-style: normal;
+	font-weight: 300;
+	src: url( $build_dir + '/assets/build/library/fonts/avenir-lt-std/Avenir LT Std 35 Light.otf'); /* IE9 Compat Modes */
+	src: local('Avenir LT Std 35 Light'), local('avenir-lt-std-Light'),
+	url( $build_dir + '/assets/build/library/fonts/avenir-lt-std/Avenir LT Std 35 Light.otf') format('embedded-opentype'), /* IE6-IE8 */
+	url( $build_dir + '/assets/build/library/fonts/avenir-lt-std/Avenir LT Std 35 Light.otf') format('woff2'), /* Super Modern Browsers */
+	url( $build_dir + '/assets/build/library/fonts/avenir-lt-std/Avenir LT Std 35 Light.otf') format('woff'), /* Modern Browsers */
+	url( $build_dir + '/assets/build/library/fonts/avenir-lt-std/Avenir LT Std 35 Light.otf') format('truetype'), /* Safari, Android, iOS */
+	url( $build_dir + '/assets/build/library/fonts/avenir-lt-std/Avenir LT Std 35 Light.otf') format('svg'); /* Legacy iOS */
+}
+/*---------------------------
+			Common reset css
+---------------------------*/
+* {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body {
+	color: rgba(20, 20, 20, 0.88);
+}
+a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, kbd, label, legend, li, object, ol, p, pre, q, s, samp, small, span, strike, strong, sub, sup, tt, u, ul, var {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+a {
+	color: #ea7250;
+	cursor: pointer;
+	&:hover, &:focus, &:active, &:visited {
+		text-decoration: none;
+		color: #ea7250;
+	}
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+	color: #4b1100;
+	padding-bottom: 10px;
+	line-height: 1em;
+	font-weight: 500;
+}
+
 /*---------------------------
 		Accessiblity
 ---------------------------*/
@@ -104,9 +157,12 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
-
-a {
-	&:hover, &:focus, &:active, &:visited {
-		text-decoration: none;
+#page-container {
+	#main-content {
+		background-color: #ddd;
+		padding: 200px 0;
+		.container:before {
+			content: none;
+		}
 	}
 }
