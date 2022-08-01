@@ -27,6 +27,8 @@ class DIVI_CHILD_THEME {
 		Register_Taxonomies::get_instance();
 		Archive_Settings::get_instance();
 		Horizental_ConnectAddon::get_instance();
+		Shortcode_Divi::get_instance();
+		Elementor_Divi_Addons::get_instance();
 
 		$this->setup_hooks();
 	}
@@ -37,9 +39,19 @@ class DIVI_CHILD_THEME {
 		 * Actions.
 		 */
 		add_action( 'after_setup_theme', [ $this, 'setup_theme' ] );
+		add_filter( 'body_class', [ $this, 'body_class' ], 10, 1 );
 
 	}
-
+	/**
+	 * Add body class
+	 */
+	public function body_class( $classes ) {
+		$class = [ 'body-front-page' ];
+		
+		if( is_front_page() ) {$class[] = 'body-front-page';}
+		
+		return array_merge( $classes, $class );
+	}
 	/**
 	 * Setup theme.
 	 *

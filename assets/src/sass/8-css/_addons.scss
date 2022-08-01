@@ -9,9 +9,14 @@
 		padding: 41vh 44px 44px 44px;
 		.et-social-icons {
 			float: right;
+			padding: 20px;
+			border-radius: 35px;
+			background: none;
+			border: none;
+			transition: all ease linear;
 			li {
 				display: list-item;
-				margin-left: 20px;
+				// margin-left: 20px;
 				text-align: center;
 				margin-bottom: 20px;
 			}
@@ -28,6 +33,9 @@
 				svg {
 					height: 30px;
 					width: 30px;
+					.svg-change-fill {
+						fill: #fff;
+					}
 				}
 				span {
 					display: block;
@@ -90,8 +98,20 @@
 				left: 0;
 			}
 		}
+		&.on-scroll {
+			.et-social-icons {
+				background: #cccccc25;
+				border: 2px solid #d3d3d3;
+				li a svg {
+					.svg-change-fill {
+						fill: #4b1100;
+					}
+				}
+			}
+		}
 	}
 	.horizental_contact {
+		display: none;
 		label {
 			-webkit-transition: all .2s ease-in-out;
 			-moz-transition: all .2s ease-in-out;
@@ -106,13 +126,23 @@
 			font-size: 21px;
 			font-weight: 700;
 			padding: 10px 20px 13px 20px;
-			background-color: #fff0;
+			background: none;
 			border-radius: 57px;
 			z-index: 9;
-			border: 4px solid #eee0;
+			border: none;
 			position: fixed;
 			a {
 				color: #fff;
+			}
+		}
+		&.on-scroll {
+			label {
+				background: #cccccc25;
+				border: 2px solid #d3d3d3;
+				color: #4b1100;
+				a {
+					color: #4b1100;
+				}
 			}
 		}
 	}
