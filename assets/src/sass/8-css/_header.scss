@@ -164,15 +164,12 @@ header.et-l.et-l--header {
   transition: background-color 0.4s, color 0.4s, opacity 0.4s ease-in-out, -webkit-transform 0.4s;
   transition: background-color 0.4s, color 0.4s, transform 0.4s, opacity 0.4s ease-in-out;
   transition: background-color 0.4s, color 0.4s, transform 0.4s, opacity 0.4s ease-in-out, -webkit-transform 0.4s;
-  background-color: rgba(0, 0, 0, 0);
-  background: #e7e7e7;
-  background: none;
   box-shadow: none;
   font-family: 'Roboto Condensed', Helvetica, Arial, Lucida, sans-serif;
   position: fixed;
   position: absolute;
-  height: 80px;
-  max-height: 80px;
+  // height: 80px;
+  // max-height: 80px;
   .et_pb_section {
     padding: unset;
     background: none;
@@ -188,8 +185,7 @@ header.et-l.et-l--header {
           background: none;
         }
         .et_pb_module {
-          background-color: none;
-          background: none;
+          background: none !important;
         }
         &.et-last-child {
           .et_pb_module {
